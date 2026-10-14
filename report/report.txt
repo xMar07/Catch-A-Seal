@@ -1,0 +1,14 @@
+Here is an overall summary of what I did so far : 
+I took notes on my notebook to divide the game into sub systems that would also be divided into sub sub systems with other elements , what i worked on so far were : the main Gmae system (which is the general picture of the game) , the Heath sub system and the Score sub system that ensure an overall clear gameplay (update : 14/10/2026 , as I mentioned that im still working on it)
+Organised files as a first step inside unity , preparing prefabs assets scripts etc
+so we have :
+Gamesystem (seals falling, orcas falling, gloves catching them)
+
+
+
+For the Game system at the beginning I did work using C # events
+with the help of AI since I was short on time (has laptop issues + and I was still confused about what to do so I prompted the following scripts : FallingObject , ObjectSpawner and PlayerGloves(basically the slide the player moves) that handle simple gameplay , didnt use a GameEventManager yet since nothing complicated was done here and it was easy , all of this was done in a branch called Gmaesystem i created to organise stuff before pushing to the main (tried creating branches for every big step i made aka sub system not sure if im doing right)
+moving to the next step which are the score and health system that are hevaily tied to i decided to work on them together under one gameeventmanager , created 2 major scripts called scoremanager and healthamanger that contain monobehaviours for every small detail related to the sub sub system : 
+score counter , best score and score reset gathered in one script which is the score manager and we have seals and orcas detections in the health manager script (for further understanding of the game concept read the README pls ) , as for the UI i worked on it after finishing the scripts , helped myself with AI for a bit 
+ofc i couldnt code from scratch so I prompted the scripts using gemini , made sure every script was tied to the gameeventmanager and handled its very own tasks without mixing the health and the score part and it worked perfectly fine , also no merge conflicts 
+looking to work on further things (due to circumstances i couldnt start working on time couldve delivered  nicer work with art created on my own as well , will keep working on the game after the deadline ^^)                                                                                                                                                                  
