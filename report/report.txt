@@ -1,10 +1,14 @@
 Here is an overall summary of what I did so far : 
 I took notes on my notebook to divide the game into sub systems that would also be divided into sub sub systems with other elements , what i worked on so far were : the main Gmae system (which is the general picture of the game) , the Heath sub system and the Score sub system that ensure an overall clear gameplay (update : 14/10/2026 , as I mentioned that im still working on it)
 Organised files as a first step inside unity , preparing prefabs assets scripts etc
+
 so we have :
-Gamesystem (seals falling, orcas falling, gloves catching them)
-
-
+Game subsystem (seals falling, orcas falling, gloves catching them)
+Health subsystem ( UI , seals health)
+Score subsystem ( best score, score counter, new record alert)
+audio sub system
+animations sub system
+others sub systems (details)
 
 For the Game system at the beginning I did work using C # events
 with the help of AI since I was short on time (has laptop issues + and I was still confused about what to do so I prompted the following scripts : FallingObject , ObjectSpawner and PlayerGloves(basically the slide the player moves) that handle simple gameplay , didnt use a GameEventManager yet since nothing complicated was done here and it was easy , all of this was done in a branch called Gmaesystem i created to organise stuff before pushing to the main (tried creating branches for every big step i made aka sub system not sure if im doing right)
