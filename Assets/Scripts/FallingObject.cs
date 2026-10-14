@@ -1,24 +1,21 @@
 using UnityEngine;
-using System;
 
 public class FallingObject : MonoBehaviour
 {
-    // 1. Added this enum and variable to distinguish good vs bad items
     public enum ObjectType { Good, Bad }
-    [Header("Item Type")]
-    public ObjectType itemType;
 
-    public static event Action<FallingObject> OnItemCaught;
+    [Header("Item Configuration")]
+    public ObjectType itemType; // Set to Good for Seal, Bad for Orca in the Inspector
 
     [Header("Movement Settings")]
     [SerializeField] private float fallSpeed = 5f;
 
     private void Update()
     {
-        // Move the object straight down every frame
+        // Move straight down
         transform.Translate(Vector3.down * fallSpeed * Time.deltaTime);
 
-        // Optional: Destroy/recycle if it falls past the screen bottom
+        // Clean up if it falls off screen
         if (transform.position.y < -10f)
         {
             Destroy(gameObject);
@@ -27,13 +24,12 @@ public class FallingObject : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // Check if the colliding object is the player's gloves
+        // Check if it hit the player's gloves
         if (collision.CompareTag("PlayerGloves"))
         {
-            // Fire the event, passing reference to this object
-            OnItemCaught?.Invoke(this);
+            // Notify the central hub instead of talking to score/health directly
+            GameEventManager.TriggerItemCaught(this);
 
-            // Make the object disappear immediately upon contact
             Destroy(gameObject);
         }
     }
